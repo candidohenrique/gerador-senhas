@@ -8,9 +8,12 @@ def gerar_senha(tamanho):
     return senha
 
 print("========== GERADOR DE SENHAS ==========")
-
+print("")
 while True:
-    print("\nEscolha o tamanho da senha que deseja gerar: ")
-    tamanho = int(input("Digite um número (ex: 12): "))
-    senha = gerar_senha(tamanho)
-    print(f"Senha gerada: {senha}")
+    try:
+        print("Escolha o tamanho da senha que deseja gerar: ")
+        tamanho = int(input("Digite um número (ex: 12): "))
+        senha = gerar_senha(tamanho)
+        print(f"Senha gerada: {senha}")
+    except ValueError:
+        print("\nPor favor, digite um número válido.")
