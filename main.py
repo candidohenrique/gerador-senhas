@@ -1,5 +1,7 @@
 import secrets
 import string
+import pyperclip
+
 
 def gerar_senha(tamanho):
     grupos = [
@@ -31,7 +33,9 @@ while True:
             print("O tamanho mínimo para garantir complexidade é 8.")
             continue
         senha = gerar_senha(tamanho)
+        pyperclip.copy(senha)
         print(f"Senha gerada: {senha}")
+        print("A senha foi copiada para a área de transferência.")
         print("\nDeseja gerar outra senha? (s/n)")
         resposta = input().lower()
         if resposta != 's':
