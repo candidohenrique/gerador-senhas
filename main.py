@@ -1,4 +1,3 @@
-#cli do gerador de senhas 
 import random
 import string
 
@@ -15,5 +14,10 @@ while True:
         tamanho = int(input("Digite um número (ex: 12): "))
         senha = gerar_senha(tamanho)
         print(f"Senha gerada: {senha}")
+        print("\nDeseja gerar outra senha? (s/n)")
+        resposta = input().lower()
+        if resposta != 's':
+            print("Obrigado por usar o gerador de senhas. Até a próxima!")
+            break
     except ValueError:
         print("\nPor favor, digite um número válido.")
